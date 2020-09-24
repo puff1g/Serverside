@@ -47,7 +47,7 @@ namespace WorldOfStore.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProduct(long id, Product product)
         {
-            if (id != product.Id)
+            if (id != product.ProductID)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace WorldOfStore.Controllers
             _context.Product.Add(product);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProduct", new { id = product.Id }, product);
+            return CreatedAtAction("GetProduct", new { id = product.ProductID }, product);
         }
 
         // DELETE: api/Products/5
@@ -103,7 +103,7 @@ namespace WorldOfStore.Controllers
 
         private bool ProductExists(long id)
         {
-            return _context.Product.Any(e => e.Id == id);
+            return _context.Product.Any(e => e.ProductID == id);
         }
     }
 }

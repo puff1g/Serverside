@@ -21,7 +21,7 @@ namespace WorldOfStore.Migrations
 
             modelBuilder.Entity("WorldOfStore.Models.Order", b =>
                 {
-                    b.Property<long>("OrderID")
+                    b.Property<long>("OrderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -32,19 +32,22 @@ namespace WorldOfStore.Migrations
                     b.Property<string>("KundeID")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("OrderID1")
+                    b.Property<long?>("OrderId1")
                         .HasColumnType("bigint");
 
-                    b.HasKey("OrderID");
+                    b.Property<string>("Product")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("OrderID1");
+                    b.HasKey("OrderId");
+
+                    b.HasIndex("OrderId1");
 
                     b.ToTable("Order");
                 });
 
             modelBuilder.Entity("WorldOfStore.Models.Product", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long>("ProductID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -61,12 +64,12 @@ namespace WorldOfStore.Migrations
                     b.Property<int>("Pris")
                         .HasColumnType("int");
 
-                    b.Property<long?>("ProductId")
+                    b.Property<long?>("ProductID1")
                         .HasColumnType("bigint");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProductID");
 
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ProductID1");
 
                     b.ToTable("Product");
                 });
@@ -96,7 +99,7 @@ namespace WorldOfStore.Migrations
 
             modelBuilder.Entity("WorldOfStore.Models.User", b =>
                 {
-                    b.Property<long>("UserID")
+                    b.Property<long>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -104,7 +107,10 @@ namespace WorldOfStore.Migrations
                     b.Property<bool>("IsAdmin")
                         .HasColumnType("bit");
 
-                    b.Property<long?>("UserID1")
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("UserId1")
                         .HasColumnType("bigint");
 
                     b.Property<string>("UserMail")
@@ -113,9 +119,9 @@ namespace WorldOfStore.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UserID");
+                    b.HasKey("UserId");
 
-                    b.HasIndex("UserID1");
+                    b.HasIndex("UserId1");
 
                     b.ToTable("User");
                 });
@@ -123,21 +129,21 @@ namespace WorldOfStore.Migrations
             modelBuilder.Entity("WorldOfStore.Models.Order", b =>
                 {
                     b.HasOne("WorldOfStore.Models.Order", null)
-                        .WithMany("order")
-                        .HasForeignKey("OrderID1");
+                        .WithMany("Orders")
+                        .HasForeignKey("OrderId1");
                 });
 
             modelBuilder.Entity("WorldOfStore.Models.Product", b =>
                 {
                     b.HasOne("WorldOfStore.Models.Product", null)
                         .WithMany("Products")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductID1");
                 });
 
             modelBuilder.Entity("WorldOfStore.Models.ProductVariant", b =>
                 {
                     b.HasOne("WorldOfStore.Models.ProductVariant", null)
-                        .WithMany("productVariant")
+                        .WithMany("ProductVariants")
                         .HasForeignKey("ProductVariantId");
                 });
 
@@ -145,7 +151,7 @@ namespace WorldOfStore.Migrations
                 {
                     b.HasOne("WorldOfStore.Models.User", null)
                         .WithMany("Users")
-                        .HasForeignKey("UserID1");
+                        .HasForeignKey("UserId1");
                 });
 #pragma warning restore 612, 618
         }

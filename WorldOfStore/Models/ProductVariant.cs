@@ -10,6 +10,6 @@ namespace WorldOfStore.Models
         public long Id { get; set; }
         public string Difficulty { get; set; }
         public int Price { get; set; }
-        public virtual List<ProductVariant> productVariant { get; set; }
+        public virtual List<ProductVariant> ProductVariants { get; set; }
     }
 }

@@ -454,8 +454,6 @@ C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\bin\Debug\netcoreapp3.1\r
 C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.csprojAssemblyReference.cache
 C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.AssemblyInfoInputs.cache
 C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.AssemblyInfo.cs
-C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.csproj.CoreCompileInputs.cache
-C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.RazorTargetAssemblyInfo.cache
 C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.csproj.CopyComplete
 C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\staticwebassets\WorldOfStore.StaticWebAssets.Manifest.cache
@@ -463,3 +461,6 @@ C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\s
 C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.dll
 C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.pdb
 C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.genruntimeconfig.cache
+C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.csproj.CoreCompileInputs.cache
+C:\Users\tke20\Documents\Skole\Serverside\WorldOfStore\obj\Debug\netcoreapp3.1\WorldOfStore.MvcApplicationPartsAssemblyInfo.cache

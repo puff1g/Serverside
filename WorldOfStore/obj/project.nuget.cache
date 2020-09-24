@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "E0lOWMrrnYmeJVR+s19A9LUSaSbTjKghAo2466ICT7syf9ZXOr83S85PKfnwL7BW0e/9pipMkrwXTU/86m7r4g==",
+  "dgSpecHash": "WkLGz1n6zSOtXBvJ1zuvT/REesV9aHLkxwavG9ii1bIFX4WeSVwyPFH6truVNhm+I4eEwPm2aCpfWf/iciK3qw==",
   "success": true,
   "projectFilePath": "C:\\Users\\tke20\\Documents\\Skole\\Serverside\\WorldOfStore\\WorldOfStore.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tke20\\.nuget\\packages\\bcrypt.net-next\\4.0.0\\bcrypt.net-next.4.0.0.nupkg.sha512",
     "C:\\Users\\tke20\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\tke20\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\tke20\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",

@@ -7,9 +7,10 @@ namespace WorldOfStore.Models
 {
     public class Order
     {
-        public long OrderID { get; set; }
+        public long OrderId { get; set; }
         public string KundeID { get; set; }
         public DateTime Date { get; set; }
-        public virtual List<Order> order { get; set; }
+        public string Product { get; set; }
+        public virtual List<Order> Orders { get; set; }
     }
 }
