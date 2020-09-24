@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BCrypt.Net.BCrypt;
+using BCrypt.Net;
 
 namespace WorldOfStore.Models
 {
