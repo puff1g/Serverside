@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WorldOfStore.Models
 {
-    public class product
+    public class Product
     {
         public long Id {get; set;}
         public string Name {get; set;}
@@ -13,6 +13,6 @@ namespace WorldOfStore.Models
         public int Pris {get; set;}
         public int Amount {get; set;}
 
-        public virtual List<product> Products { get; set; }
+        public virtual List<Product> Products { get; set; }
     }
 }

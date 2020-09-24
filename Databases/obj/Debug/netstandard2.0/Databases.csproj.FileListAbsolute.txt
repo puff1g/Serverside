@@ -1,0 +1,9 @@
+C:\Users\tke20\Documents\Skole\Serverside\Databases\bin\Debug\netstandard2.0\Databases.deps.json
+C:\Users\tke20\Documents\Skole\Serverside\Databases\bin\Debug\netstandard2.0\Databases.dll
+C:\Users\tke20\Documents\Skole\Serverside\Databases\bin\Debug\netstandard2.0\Databases.pdb
+C:\Users\tke20\Documents\Skole\Serverside\Databases\obj\Debug\netstandard2.0\Databases.csprojAssemblyReference.cache
+C:\Users\tke20\Documents\Skole\Serverside\Databases\obj\Debug\netstandard2.0\Databases.AssemblyInfoInputs.cache
+C:\Users\tke20\Documents\Skole\Serverside\Databases\obj\Debug\netstandard2.0\Databases.AssemblyInfo.cs
+C:\Users\tke20\Documents\Skole\Serverside\Databases\obj\Debug\netstandard2.0\Databases.csproj.CoreCompileInputs.cache
+C:\Users\tke20\Documents\Skole\Serverside\Databases\obj\Debug\netstandard2.0\Databases.dll
+C:\Users\tke20\Documents\Skole\Serverside\Databases\obj\Debug\netstandard2.0\Databases.pdb

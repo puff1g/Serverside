@@ -11,7 +11,6 @@ namespace WorldOfStore.Models
         public string UserName  {get; set; }
         public string UserMail  {get; set; }
         public Boolean IsAdmin { get; set; }
-         
         public virtual List<User> Users { get; set; }
     }
 }

@@ -11,48 +11,48 @@ namespace WorldOfStore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class OrdersController : ControllerBase
     {
         private readonly AllContext _context;
 
-        public ProductsController(AllContext context)
+        public OrdersController(AllContext context)
         {
             _context = context;
         }
 
-        // GET: api/Products
+        // GET: api/Orders
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProduct()
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrder()
         {
-            return await _context.Product.ToListAsync();
+            return await _context.Order.ToListAsync();
         }
 
-        // GET: api/Products/5
+        // GET: api/Orders/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(long id)
+        public async Task<ActionResult<Order>> GetOrder(long id)
         {
-            var product = await _context.Product.FindAsync(id);
+            var order = await _context.Order.FindAsync(id);
 
-            if (product == null)
+            if (order == null)
             {
                 return NotFound();
             }
 
-            return product;
+            return order;
         }
 
-        // PUT: api/Products/5
+        // PUT: api/Orders/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct(long id, Product product)
+        public async Task<IActionResult> PutOrder(long id, Order order)
         {
-            if (id != product.Id)
+            if (id != order.OrderID)
             {
                 return BadRequest();
             }
 
-            _context.Entry(product).State = EntityState.Modified;
+            _context.Entry(order).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace WorldOfStore.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductExists(id))
+                if (!OrderExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +73,37 @@ namespace WorldOfStore.Controllers
             return NoContent();
         }
 
-        // POST: api/Products
+        // POST: api/Orders
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        public async Task<ActionResult<Order>> PostOrder(Order order)
         {
-            _context.Product.Add(product);
+            _context.Order.Add(order);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProduct", new { id = product.Id }, product);
+            return CreatedAtAction("GetOrder", new { id = order.OrderID }, order);
         }
 
-        // DELETE: api/Products/5
+        // DELETE: api/Orders/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Product>> DeleteProduct(long id)
+        public async Task<ActionResult<Order>> DeleteOrder(long id)
         {
-            var product = await _context.Product.FindAsync(id);
-            if (product == null)
+            var order = await _context.Order.FindAsync(id);
+            if (order == null)
             {
                 return NotFound();
             }
 
-            _context.Product.Remove(product);
+            _context.Order.Remove(order);
             await _context.SaveChangesAsync();
 
-            return product;
+            return order;
         }
 
-        private bool ProductExists(long id)
+        private bool OrderExists(long id)
         {
-            return _context.Product.Any(e => e.Id == id);
+            return _context.Order.Any(e => e.OrderID == id);
         }
     }
 }

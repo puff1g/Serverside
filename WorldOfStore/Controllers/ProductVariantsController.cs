@@ -11,48 +11,48 @@ namespace WorldOfStore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProductVariantsController : ControllerBase
     {
         private readonly AllContext _context;
 
-        public ProductsController(AllContext context)
+        public ProductVariantsController(AllContext context)
         {
             _context = context;
         }
 
-        // GET: api/Products
+        // GET: api/ProductVariants
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProduct()
+        public async Task<ActionResult<IEnumerable<ProductVariant>>> GetProductVariant()
         {
-            return await _context.Product.ToListAsync();
+            return await _context.ProductVariant.ToListAsync();
         }
 
-        // GET: api/Products/5
+        // GET: api/ProductVariants/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Product>> GetProduct(long id)
+        public async Task<ActionResult<ProductVariant>> GetProductVariant(long id)
         {
-            var product = await _context.Product.FindAsync(id);
+            var productVariant = await _context.ProductVariant.FindAsync(id);
 
-            if (product == null)
+            if (productVariant == null)
             {
                 return NotFound();
             }
 
-            return product;
+            return productVariant;
         }
 
-        // PUT: api/Products/5
+        // PUT: api/ProductVariants/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct(long id, Product product)
+        public async Task<IActionResult> PutProductVariant(long id, ProductVariant productVariant)
         {
-            if (id != product.Id)
+            if (id != productVariant.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(product).State = EntityState.Modified;
+            _context.Entry(productVariant).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace WorldOfStore.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductExists(id))
+                if (!ProductVariantExists(id))
                 {
                     return NotFound();
                 }
@@ -73,37 +73,37 @@ namespace WorldOfStore.Controllers
             return NoContent();
         }
 
-        // POST: api/Products
+        // POST: api/ProductVariants
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Product>> PostProduct(Product product)
+        public async Task<ActionResult<ProductVariant>> PostProductVariant(ProductVariant productVariant)
         {
-            _context.Product.Add(product);
+            _context.ProductVariant.Add(productVariant);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProduct", new { id = product.Id }, product);
+            return CreatedAtAction("GetProductVariant", new { id = productVariant.Id }, productVariant);
         }
 
-        // DELETE: api/Products/5
+        // DELETE: api/ProductVariants/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Product>> DeleteProduct(long id)
+        public async Task<ActionResult<ProductVariant>> DeleteProductVariant(long id)
         {
-            var product = await _context.Product.FindAsync(id);
-            if (product == null)
+            var productVariant = await _context.ProductVariant.FindAsync(id);
+            if (productVariant == null)
             {
                 return NotFound();
             }
 
-            _context.Product.Remove(product);
+            _context.ProductVariant.Remove(productVariant);
             await _context.SaveChangesAsync();
 
-            return product;
+            return productVariant;
         }
 
-        private bool ProductExists(long id)
+        private bool ProductVariantExists(long id)
         {
-            return _context.Product.Any(e => e.Id == id);
+            return _context.ProductVariant.Any(e => e.Id == id);
         }
     }
 }

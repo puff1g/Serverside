@@ -27,9 +27,10 @@ namespace WorldOfStore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<productsContext>(opt =>
-            opt.UseInMemoryDatabase("productList"));
+            services.AddDbContext<AllContext>(opt =>
+            opt.UseSqlServer(Configuration.GetConnectionString("MyConnection")));
             services.AddControllers();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
