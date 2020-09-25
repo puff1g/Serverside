@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using WorldOfStore.Models;
+using WorldOfStore.IService;
 
 namespace WorldOfStore
 {
@@ -30,6 +31,7 @@ namespace WorldOfStore
             services.AddDbContext<AllContext>(opt =>
             opt.UseSqlServer(Configuration.GetConnectionString("MyConnection")));
             services.AddControllers();
+            services.AddScoped<IUserService, UserService>();
             
         }
 

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using WorldOfStore.IService;
 using WorldOfStore.Models;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WorldOfStore.Controllers
 {
@@ -13,97 +14,39 @@ namespace WorldOfStore.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly AllContext _context;
+        IUserService _userService = null;
 
-        public UsersController(AllContext context)
+        public UsersController(IUserService userService)
         {
-            _context = context;
+            _userService = userService;
         }
 
-        // GET: api/Users
+        // GET: api/<UsersController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUser()
+        public List<User> GetAllUsers()
         {
-            return await _context.User.ToListAsync();
+            return _userService.GetAllUsers();
         }
 
-        // GET: api/Users/5
+        // GET api/<UsersController>/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(long id)
+        public string Get(int id)
         {
-            var user = await _context.User.FindAsync(id);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return user;
+            return "value";
         }
 
-        // PUT: api/Users/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(long id, User user)
-        {
-            if (id != user.UserId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(user).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Users
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // POST api/<UsersController>
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public User Signup([FromBody] User oUser)
         {
-            _context.User.Add(user);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetUser", new { id = user.UserId }, user);
+            return _userService.Signup(oUser);
         }
 
-        // DELETE: api/Users/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<User>> DeleteUser(long id)
+        [HttpGet("Login")]
+        public User Login([FromBody] User oUser)
         {
-            var user = await _context.User.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            _context.User.Remove(user);
-            await _context.SaveChangesAsync();
-
-            return user;
+            return _userService.Login(oUser);
         }
 
-        private bool UserExists(long id)
-        {
-            return _context.User.Any(e => e.UserId == id);
-        }
     }
 }
