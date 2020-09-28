@@ -8886,19 +8886,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Thomas\\.nuget\\packages\\": {}
+    "C:\\Users\\tke20\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Thomas\\Documents\\GitHub\\Serverside\\WorldOfStore\\WorldOfStore.csproj",
+      "projectUniqueName": "C:\\Users\\tke20\\Documents\\Skole\\Serverside\\WorldOfStore\\WorldOfStore.csproj",
       "projectName": "WorldOfStore",
-      "projectPath": "C:\\Users\\Thomas\\Documents\\GitHub\\Serverside\\WorldOfStore\\WorldOfStore.csproj",
-      "packagesPath": "C:\\Users\\Thomas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Thomas\\Documents\\GitHub\\Serverside\\WorldOfStore\\obj\\",
+      "projectPath": "C:\\Users\\tke20\\Documents\\Skole\\Serverside\\WorldOfStore\\WorldOfStore.csproj",
+      "packagesPath": "C:\\Users\\tke20\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tke20\\Documents\\Skole\\Serverside\\WorldOfStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Thomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tke20\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8967,7 +8967,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
