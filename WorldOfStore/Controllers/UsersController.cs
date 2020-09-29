@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WorldOfStore.IService;
+using Microsoft.EntityFrameworkCore;
 using WorldOfStore.Models;
+using WorldOfStore.IService;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 
 namespace WorldOfStore.Controllers
 {
@@ -14,39 +16,89 @@ namespace WorldOfStore.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
+        private readonly AllContext _context;
         IUserService _userService = null;
 
-        public UsersController(IUserService userService)
+        public UsersController(AllContext context)
         {
-            _userService = userService;
+            _context = context;
+
         }
 
-        // GET: api/<UsersController>
+        // GET: api/Users
         [HttpGet]
-        public List<User> GetAllUsers()
+        public async Task<ActionResult<IEnumerable<User>>> GetUser()
         {
-            return _userService.GetAllUsers();
+            return await _context.User.ToListAsync();
         }
 
-        // GET api/<UsersController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        
+
+        // PUT: api/Users/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutUser(long id, User user)
         {
-            return "value";
+            if (id != user.UserId)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(user).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UserExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
         }
 
+        
+
+        // DELETE: api/Users/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<User>> DeleteUser(long id)
+        {
+            var user = await _context.User.FindAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            _context.User.Remove(user);
+            await _context.SaveChangesAsync();
+
+            return user;
+        }
         // POST api/<UsersController>
         [HttpPost]
-        public User Signup([FromBody] User oUser)
+        public User Signup([FromBody] User user)
         {
-            return _userService.Signup(oUser);
+            return _userService.Signup(user);
         }
 
         [HttpGet("Login")]
-        public User Login([FromBody] User oUser)
+        public User Login([FromBody] User user)
         {
-            return _userService.Login(oUser);
+            return _userService.Login(user);
         }
 
+        private bool UserExists(long id)
+        {
+            return _context.User.Any(e => e.UserId == id);
+        }
     }
 }

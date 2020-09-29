@@ -28,6 +28,7 @@ namespace WorldOfStore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddDbContext<AllContext>(opt =>
             opt.UseSqlServer(Configuration.GetConnectionString("MyConnection")));
             services.AddControllers();
@@ -44,6 +45,11 @@ namespace WorldOfStore
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors(builder => builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
 
             app.UseRouting();
 
