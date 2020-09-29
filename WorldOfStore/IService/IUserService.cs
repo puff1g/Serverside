@@ -8,9 +8,9 @@ namespace WorldOfStore.IService
 {
     public interface IUserService
     {
-        User Signup(User oUser);
+        User Signup(User user);
 
-        User Login(User oUser);
+        User Login(User user);
         List<User> GetAllUsers();
     }
 }
