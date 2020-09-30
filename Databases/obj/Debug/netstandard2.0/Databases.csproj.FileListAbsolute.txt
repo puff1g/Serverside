@@ -7,3 +7,12 @@ C:\Users\tke20\Documents\Skole\Serverside\Databases\obj\Debug\netstandard2.0\Dat
 C:\Users\tke20\Documents\Skole\Serverside\Databases\obj\Debug\netstandard2.0\Databases.csproj.CoreCompileInputs.cache
 C:\Users\tke20\Documents\Skole\Serverside\Databases\obj\Debug\netstandard2.0\Databases.dll
 C:\Users\tke20\Documents\Skole\Serverside\Databases\obj\Debug\netstandard2.0\Databases.pdb
+C:\Users\Thomas\Documents\GitHub\ServerSide\Databases\bin\Debug\netstandard2.0\Databases.deps.json
+C:\Users\Thomas\Documents\GitHub\ServerSide\Databases\bin\Debug\netstandard2.0\Databases.dll
+C:\Users\Thomas\Documents\GitHub\ServerSide\Databases\bin\Debug\netstandard2.0\Databases.pdb
+C:\Users\Thomas\Documents\GitHub\ServerSide\Databases\obj\Debug\netstandard2.0\Databases.csprojAssemblyReference.cache
+C:\Users\Thomas\Documents\GitHub\ServerSide\Databases\obj\Debug\netstandard2.0\Databases.AssemblyInfoInputs.cache
+C:\Users\Thomas\Documents\GitHub\ServerSide\Databases\obj\Debug\netstandard2.0\Databases.AssemblyInfo.cs
+C:\Users\Thomas\Documents\GitHub\ServerSide\Databases\obj\Debug\netstandard2.0\Databases.csproj.CoreCompileInputs.cache
+C:\Users\Thomas\Documents\GitHub\ServerSide\Databases\obj\Debug\netstandard2.0\Databases.dll
+C:\Users\Thomas\Documents\GitHub\ServerSide\Databases\obj\Debug\netstandard2.0\Databases.pdb

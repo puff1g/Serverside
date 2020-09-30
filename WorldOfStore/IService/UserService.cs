@@ -14,11 +14,11 @@ namespace WorldOfStore.IService
             return Global.Users;
         }
 
-        public User Login(User oUser)
+        public User Login(User user)
         {
-            var user = Global.Users.SingleOrDefault(x=>x.UserName == oUser.UserName);
+            var UserEX = Global.Users.SingleOrDefault(x=>x.UserName == user.UserName);
 
-            bool isValidPassword = BCrypt.Net.BCrypt.Verify(oUser.Password, user.Password);
+            bool isValidPassword = BCrypt.Net.BCrypt.Verify(user.Password, user.Password);
 
             if(isValidPassword)
             {
@@ -27,11 +27,11 @@ namespace WorldOfStore.IService
             return null;
         }
 
-        public User Signup(User oUser)
+        public User Signup(User user) 
         {
-            oUser.Password = BCrypt.Net.BCrypt.HashPassword(oUser.Password);
-            Global.Users.Add(oUser);
-            return oUser;
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            Global.Users.Add(user);
+            return user;
         }
     }
 }
