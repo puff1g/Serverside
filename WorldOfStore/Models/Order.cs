@@ -11,6 +11,5 @@ namespace WorldOfStore.Models
         public string KundeID { get; set; }
         public DateTime Date { get; set; }
         public string Product { get; set; } // Add total
-        public virtual List<Order> Orders { get; set; }
     }
 }

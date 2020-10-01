@@ -12,6 +12,5 @@ namespace WorldOfStore.Models
         public string Description {get; set;}
         public int Pris {get; set;}
         public int Amount {get; set;}
-        public virtual List<Product> Products { get; set; }
     }
 }

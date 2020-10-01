@@ -13,7 +13,6 @@ namespace WorldOfStore.Models
         public string UserMail  {get; set; }
         public string Password { get; set; }
         public Boolean IsAdmin { get; set; }
-        public virtual List<User> Users { get; set; }
 
 
     }
