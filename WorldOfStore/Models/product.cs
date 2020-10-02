@@ -10,7 +10,7 @@ namespace WorldOfStore.Models
         public long ProductID {get; set;}
         public string Name {get; set;}
         public string Description {get; set;}
-        public int Pris {get; set;}
-        public int Amount {get; set;}
+        public string Pris {get; set;}
+        public string Amount {get; set;}
     }
 }
